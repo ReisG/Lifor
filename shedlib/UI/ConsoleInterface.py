@@ -14,3 +14,7 @@ class ConsoleInterface(UserInterface):
    def show_msg(self, msg: str = "Hello, World!") -> None:
       """Write message in console"""
       print(msg)
+
+   def get_log(self) -> str:
+      """Get users input from console"""
+      return input(">>>")
