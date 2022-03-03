@@ -15,13 +15,23 @@ class Time:
     def __eq__(self, other):
         return self.__seconds == other.__seconds
 
-    def __gt__(self):
+    def __gt__(self, other):
         return self.__seconds > other.__seconds
 
+    def __ge__(self, other):
+        return self > other and self == other
+
+    def __lt__(self, other):
+        return self.__seconds < other.__seconds
+
+    def __le__(self, other):
+        return self < other and self == other
+
+    def __ne__(self, other):
+        return not self == other
 
 
 if __name__ == '__main__':
     a = Time(60)
     b = Time(59)
-    c = a - b
-    print(c.splited)
+    print(a > b)
