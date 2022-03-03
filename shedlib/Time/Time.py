@@ -29,9 +29,3 @@ class Time:
 
     def __ne__(self, other):
         return not self == other
-
-
-if __name__ == '__main__':
-    a = Time(60)
-    b = Time(59)
-    print(a >= b)
