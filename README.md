@@ -7,7 +7,7 @@ you would be able to see:
 - How many time is there for event to begin
 - If it's already started, you might see how many time is there until the end.
 
-Cool, hah /n
+Cool, hah\
 You no more need to count time when your lesson at school or in university ends,
 when your activities starts.
 
