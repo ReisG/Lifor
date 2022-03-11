@@ -11,6 +11,11 @@ class ConsoleInterface(UserInterface):
     def update(self) -> None:
         super().update()
 
+        for point in self.queue:
+            self.show_point(name=point[0], last=point[1])
+
+        self.queue.clear()
+
     def show_msg(self, msg: str = "Hello, World!") -> None:
         """Write message in console"""
         print(msg)
