@@ -24,9 +24,9 @@ In GUI (Graphic User Interface) on Android user would be able to:
 - Create and edit his daily schedule in schedule list
 - Check events status
 
-**What do I mean user can check his event's status?**\
+**What do I mean user can check his event's status?**
 
 
 **There also will be ability to add crossing event's**\
-Imagine, you have English classes at 8:00 to 8:40 and you need to leave it to on Olympics at 8:30 to 9:10 (strange olympics, ain't it)\
+Imagine, you have English classes at 8:00 to 8:40 and you need to leave it to go on Olympics at 8:30 to 9:10 (strange olympics, ain't it)\
 You can make schedule like this
