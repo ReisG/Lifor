@@ -29,3 +29,14 @@ class Time:
 
     def __ne__(self, other):
         return not self == other
+    
+    def __str__(self) -> str:
+        t = self.splited
+        res = ""
+        if t[0] > 0:
+            res += f"{t[0]} h "
+        if t[1] > 0:
+            res += f"{t[1]} min "
+        res += f"{t[2]} sec"
+
+        return res
