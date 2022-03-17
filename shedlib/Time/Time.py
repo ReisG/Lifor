@@ -9,6 +9,9 @@ class Time:
         """ Returns a list in format [hours, minutes, seconds] """
         return [self.__seconds // 3600, self.__seconds // 60 % 60, self.__seconds % 60]
 
+    def get_seconds(self):
+        return self.__seconds
+
     def __sub__(self, other):
         return Time(abs(self.__seconds - other.__seconds))
 
