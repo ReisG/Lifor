@@ -1,8 +1,21 @@
 from shedlib.UI.UserInterface import UserInterface
+from shedlib.Time.Time import Time
 
 
 class ConsoleInterface(UserInterface):
-    """Console user interface class"""
+    """
+    Console user interface class
+
+    Fields:
+        __queue (tuple): event queue list
+
+    Methods:
+        update(): update current scene
+        show_msg(msg="Hello, World!): write message in console
+        show_event(name="Event", started=True, time=Time(seconds=0)): write info about event in console
+        get_log(): get user input from console
+        __queue_sort(): sort queue
+    """
 
     def __init__(self) -> None:
         """Initialization method"""
@@ -10,45 +23,73 @@ class ConsoleInterface(UserInterface):
 
     def update(self) -> None:
         super().update()
-
+        # sort queue
         self.__queue_sort()
 
+        # outputting cycle
         for point in self.queue:
-            self.show_point(name=point[0], last=point[2], started=point[1])
+            self.show_event(name=point[0], started=point[1], time=point[2])
 
+        # clear queue
         self.queue.clear()
 
     def show_msg(self, msg: str = "Hello, World!") -> None:
-        """Write message in console"""
+        """
+        Write message in console
+
+        Parameters:
+            msg (str): The message to show
+        """
         print(msg)
 
-    def show_point(self, name: str = "Nothin\'", last: int = 0, started: bool = True) -> None:
-        """Write info about point in console"""
-        log = f"{name}: {last}"
+    def show_event(self, name: str = "Event", started: bool = True, time: Time = Time(seconds=0)) -> None:
+        """
+        Write info about event in console
 
+        Parameters:
+            name (str): The name of event
+            started (bool): The flag that show if event if going on now or not
+            time (Time): The time to start/end of event
+        """
+
+        # form log
+        log = f"{name}: {time}"
+
+        # add event status to log
         if started:
             log = f"# {log} left"
         else:
             log = f"{log} to beginning"
 
+        # output log
         self.show_msg(msg=log)
 
     def get_log(self) -> str:
-        """Get users input from console"""
+        """
+        Get user input from console
+
+        Returns:
+            (str): The log that user input in console
+        """
         return input(">>>")
 
     def __queue_sort(self):
         """Method to sort queue"""
         go = []
+        """list for current events"""
         wait = []
+        """list for next events"""
 
+        # split queue to "go" and "wait"
         for point in self.queue:
             if point[1]:
                 go.append(point)
             else:
                 wait.append(point)
 
+        # sort lists
         go.sort(key= lambda a: a[2])
         wait.sort(key= lambda a: a[2])
 
+        # form final queue
         self.queue = go + wait
