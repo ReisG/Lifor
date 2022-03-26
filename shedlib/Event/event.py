@@ -26,7 +26,7 @@ class Event:
     def end(self):
         return self.__end
 
-    def __lt__(self, other:Event):
+    def __lt__(self, other):
         return (self.start < other.start) or (self.start == other.start and self.end < other.end)
 
     def __str__(self):
