@@ -1,16 +1,25 @@
 from shedlib.Time.Time import Time
-import csv
-
 
 class Event:
-    def __init__(self, id: int, name: str, start: Time, end: Time, day: str):
+    def __init__(self, id: int, name: str, start: Time, end: Time):
         """Class for event"""
-        # self.__data = [ident, name, start, end, day]
         self.__id = id
         self.__name = name
         self.__start = start
         self.__end = end
-        self.__day = day
 
-    # def __repr__(self):
-    #    return f"Event({self.__data})"
+    @property
+    def id(self):
+        return self.__id
+
+    @property
+    def name(self):
+        return self.__name
+
+    @property
+    def start(self):
+        return self.__start
+
+    @property
+    def end(self):
+        return self.__end
