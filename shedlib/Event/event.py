@@ -2,6 +2,7 @@ from shedlib.Time.Time import Time
 
 class Event:
     __slots__ = ('__data', '__name', '__start', '__end',)
+    __slots__ = ('__id', '__name', '__start', '__end',)
 
     def __init__(self, id: int, name: str, start: Time, end: Time):
         """Class for event"""
