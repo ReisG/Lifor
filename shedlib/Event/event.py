@@ -1,7 +1,6 @@
 from shedlib.Time.Time import Time
 
 class Event:
-    __slots__ = ('__data', '__name', '__start', '__end',)
     __slots__ = ('__id', '__name', '__start', '__end',)
 
     def __init__(self, id: int, name: str, start: Time, end: Time):
@@ -26,3 +25,6 @@ class Event:
     @property
     def end(self):
         return self.__end
+
+    def __str__(self):
+        return f"""<{self.id}, {self.name}, {self.start.splited}, {self.end.splited}>"""
