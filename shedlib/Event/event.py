@@ -26,5 +26,8 @@ class Event:
     def end(self):
         return self.__end
 
+    def __lt__(self, other:Event):
+        return (self.start < other.start) or (self.start == other.start and self.end < other.end)
+
     def __str__(self):
         return f"""<{self.id}, {self.name}, {self.start.splited}, {self.end.splited}>"""

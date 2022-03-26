@@ -12,14 +12,21 @@ class Parser:
     def __init__(self):
         raise SyntaxError('You cannot create instance of this class. Use class methods')
 
-    @classmethod
-    def get(self, weekday=None):
+    @staticmethod
+    def get(weekday=None):
         days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
         if weekday in days:
-            return self.__parse(f'{Parser.datadir}/{weekday}.{Parser.filetype}')
+            day_schedule = Parser.__parse(f'{Parser.datadir}/{weekday}.{Parser.filetype}')
+            return Parser.__sort(day_schedule)
         else:
             raise ValueError(f'There is no day <{weekday}>')
 
+    @staticmethod
+    def __sort(day_schedule=[]):
+        day_schedule.sort()
+        return day_schedule
+
+    @staticmethod
     def __parse(filename=''):
         '''
             Method for parsing .shdl files
