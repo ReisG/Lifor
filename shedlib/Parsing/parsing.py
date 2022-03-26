@@ -7,6 +7,8 @@ class Parser:
     datadir = '.data'
     filetype = 'shdl'
 
+    sep_symb = '$#$'
+
     def __init__(self):
         raise SyntaxError('You cannot create instance of this class. Use class methods')
 
@@ -23,14 +25,13 @@ class Parser:
             Method for parsing .shdl files
             returns list of events
         '''
-        sep_symb = '$#$'
 
         result = []
         with open(filename, 'r') as file:
             id = 0
             event = file.readline()
             while (len(event) > 1 or id == 0):
-                event = event.split(sep_symb)
+                event = event.split(Parser.sep_symb)
                 result.append(Event( id, event[0], Time(int(event[1])), Time(int(event[2])) ))
                 id += 1
                 event = file.readline()
