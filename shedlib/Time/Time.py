@@ -1,16 +1,19 @@
 class Time:
-    __slots__ = ('__seconds')
+    __slots__ = ('__seconds',)
 
     def __init__(self, seconds):
         self.__seconds = seconds
 
     @property
     def splited(self):
-        ''' Returns a list in format [hours, minutes, seconds] '''
-        return [self.__seconds//3600, self.__seconds//60%60, self.__seconds%60]
+        """ Returns a list in format [hours, minutes, seconds] """
+        return [self.__seconds // 3600, self.__seconds // 60 % 60, self.__seconds % 60]
+
+    def get_seconds(self):
+        return self.__seconds
 
     def __sub__(self, other):
-        return Time(abs( self.__seconds - other.__seconds ))
+        return Time(abs(self.__seconds - other.__seconds))
 
     def __eq__(self, other):
         return self.__seconds == other.__seconds
