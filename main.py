@@ -27,7 +27,6 @@ def main():
                 Interface.append_points([activity.name, True, (activity.end - cur_time)])
             # otherwise we don't send it to Interface
 
-        Interface.clear()
         Interface.update()
         time.sleep(1)
 
