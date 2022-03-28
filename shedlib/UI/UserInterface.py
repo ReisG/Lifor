@@ -11,18 +11,15 @@ class UserInterface:
    def update(self):
       """Main method. Update current scene"""
       pass
-
-   def append_points(self, *points) -> None:
+    
+   def append_points(self, name: str = "Event", started: bool = True, time: Time = Time(seconds=0)) -> None:
       """
       Append points in queue to show.
 
-      first item in list is name of event;
-      second - flag that shows if event is going on now or not;
-      third - time to start/end of event;
-
       Parameters:
-         *points(tuple[str, bool, Time]): list of events
+         name (str): The name of event
+         started (bool): The flag that show if event if going on now or not
+         time (Time): The time to start/end of event
       """
 
-      for point in points:
-         self.queue.append(point)
+      self.queue.append([name, started, time])
