@@ -24,6 +24,9 @@ class ConsoleInterface(UserInterface):
 
     def update(self) -> None:
         super().update()
+        # clear console
+        self.clear()
+        
         # sort queue
         self.__queue_sort()
 
