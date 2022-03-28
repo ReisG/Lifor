@@ -1,7 +1,7 @@
 class Time:
     __slots__ = ('__seconds',)
 
-    def __init__(self, seconds):
+    def __init__(self, seconds=0):
         self.__seconds = seconds
 
     @property
@@ -11,6 +11,10 @@ class Time:
 
     def get_seconds(self):
         return self.__seconds
+
+    def set_in_hms_format(self, hours, minutes, seconds):
+        ''' Method for setting time in format hours:minutes:seconds '''
+        self.__seconds = hours*3600 + minutes*60 + seconds
 
     def __sub__(self, other):
         return Time(abs(self.__seconds - other.__seconds))
