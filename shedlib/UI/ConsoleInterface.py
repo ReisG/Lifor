@@ -33,6 +33,8 @@ class ConsoleInterface(UserInterface):
 
         # clear queue
         self.queue.clear()
+        # clear console
+        self.clear()
 
     def show_event(self, name: str = "Event", started: bool = True, time: Time = Time(seconds=0)) -> None:
         """
