@@ -21,10 +21,10 @@ def main():
         for activity in schedule:
             if (cur_time <= activity.start):
                 # activity hasn't started yet
-                Interface.append_points([activity.name, False, (activity.start - cur_time)])
+                Interface.append_points(activity.name, False, (activity.start - cur_time))
             elif (activity.start <= cur_time <= activity.end):
                 # activity is already running
-                Interface.append_points([activity.name, True, (activity.end - cur_time)])
+                Interface.append_points(activity.name, True, (activity.end - cur_time))
             # otherwise we don't send it to Interface
 
         Interface.update()
