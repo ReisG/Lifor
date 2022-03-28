@@ -1,5 +1,6 @@
 from shedlib.UI.UserInterface import UserInterface
 from shedlib.Time.Time import Time
+from os import system
 
 
 class ConsoleInterface(UserInterface):
@@ -33,15 +34,6 @@ class ConsoleInterface(UserInterface):
         # clear queue
         self.queue.clear()
 
-    def show_msg(self, msg: str = "Hello, World!") -> None:
-        """
-        Write message in console
-
-        Parameters:
-            msg (str): The message to show
-        """
-        print(msg)
-
     def show_event(self, name: str = "Event", started: bool = True, time: Time = Time(seconds=0)) -> None:
         """
         Write info about event in console
@@ -64,15 +56,6 @@ class ConsoleInterface(UserInterface):
         # output log
         self.show_msg(msg=log)
 
-    def get_log(self) -> str:
-        """
-        Get user input from console
-
-        Returns:
-            (str): The log that user input in console
-        """
-        return input(">>>")
-
     def __queue_sort(self):
         """Method to sort queue"""
         go = []
@@ -93,3 +76,30 @@ class ConsoleInterface(UserInterface):
 
         # form final queue
         self.queue = go + wait
+
+    @staticmethod
+    def show_msg(msg: str = "Hello, World!") -> None:
+        """
+        Write message in console
+
+        Parameters:
+            msg (str): The message to show
+        """
+        print(msg)
+
+    @staticmethod
+    def get_log() -> str:
+        """
+        Get user input from console
+
+        Returns:
+            (str): The log that user input in console
+        """
+        return input(">>>")
+
+    @staticmethod
+    def clear():
+        """
+        Clear console
+        """
+        system("cls||clear")
