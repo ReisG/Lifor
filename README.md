@@ -1,4 +1,4 @@
-# Schedule
+# Lifor
 
 __Working version__: Console User Interface\
 __What we are working on__: Graphical User Interface and App Designing
