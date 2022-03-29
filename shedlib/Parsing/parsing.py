@@ -4,10 +4,10 @@ from shedlib.Event.event import Event
 class Parser:
     __slots__ = ()
 
-    datadir = '.data'
-    filetype = 'shdl'
+    __datadir = '.data'
+    __filetype = 'shdl'
 
-    sep_symb = '$#$'
+    __sep_symb = '$#$'
 
     def __init__(self):
         raise SyntaxError('You cannot create instance of this class. Use class methods')
@@ -16,7 +16,7 @@ class Parser:
     def get(weekday=None):
         days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
         if weekday in days:
-            day_schedule = Parser.__parse(f'{Parser.datadir}/{weekday}.{Parser.filetype}')
+            day_schedule = Parser.__parse(f'{Parser.__datadir}/{weekday}.{Parser.__filetype}')
             return Parser.__sort(day_schedule)
         else:
             raise ValueError(f'There is no day <{weekday}>')
