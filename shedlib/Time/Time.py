@@ -18,11 +18,12 @@ class Time:
         ''' This method will help you to write data in object in hours:minutes:seconds format
 
         Parameters:
-            int hours, minutes, seconds: parts
+            int hours, minutes, seconds: parts of setting time
         '''
         self.__seconds = hours*3600 + minutes*60 + seconds
 
     def __sub__(self, other):
+        ''' Returns time delta between two Time objects '''
         return Time(abs(self.__seconds - other.__seconds))
 
     def __eq__(self, other):
@@ -37,10 +38,10 @@ class Time:
     def __lt__(self, other):
         return self.__seconds < other.__seconds
 
-    def __le__(self, other:Time):
+    def __le__(self, other):
         return self < other or self == other
 
-    def __ne__(self, other:Time):
+    def __ne__(self, other):
         return not self == other
 
     def __str__(self) -> str:
