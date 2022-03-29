@@ -1,7 +1,7 @@
 # Schedule
 
-Working version: Console User Interface
-What we are working on: Graphical User Interface and App Designing
+__Working version__: Console User Interface\
+__What we are working on__: Graphical User Interface and App Designing
 
 Hello! This is a program that would help you to organize your time
 
