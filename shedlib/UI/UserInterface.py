@@ -11,7 +11,7 @@ class UserInterface:
    def update(self):
       """Main method. Update current scene"""
       pass
-
+    
    def append_points(self, name: str = "Event", started: bool = True, time: Time = Time(seconds=0)) -> None:
       """
       Append points in queue to show.

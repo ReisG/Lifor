@@ -1,18 +1,29 @@
 class Time:
+    ''' Object for storing time '''
+
     __slots__ = ('__seconds',)
 
-    def __init__(self, seconds):
+    def __init__(self, seconds:int=0):
         self.__seconds = seconds
 
     @property
     def splited(self):
-        """ Returns a list in format [hours, minutes, seconds] """
+        ''' Returns a list in format [hours, minutes, seconds] '''
         return [self.__seconds // 3600, self.__seconds // 60 % 60, self.__seconds % 60]
 
     def get_seconds(self):
         return self.__seconds
 
+    def set_in_hms_format(self, hours:int, minutes:int, seconds:int):
+        ''' This method will help you to write data in object in hours:minutes:seconds format
+
+        Parameters:
+            int hours, minutes, seconds: parts of setting time
+        '''
+        self.__seconds = hours*3600 + minutes*60 + seconds
+
     def __sub__(self, other):
+        ''' Returns time delta between two Time objects '''
         return Time(abs(self.__seconds - other.__seconds))
 
     def __eq__(self, other):
@@ -32,7 +43,7 @@ class Time:
 
     def __ne__(self, other):
         return not self == other
-    
+
     def __str__(self) -> str:
         t = self.splited
         res = ""
