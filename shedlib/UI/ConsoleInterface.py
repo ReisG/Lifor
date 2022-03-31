@@ -27,10 +27,10 @@ class ConsoleInterface(UserInterface):
         """Initialization method"""
         super().__init__()
 
-    def __new__(cls):
+    def __new__(cls, *args, **kwargs):
         if cls.__created_object is None:
             cls.__created_object = super().__new__(cls)
-            cls.__created_object.__init__()
+            cls.__created_object.__init__(*args, **kwargs)
         return cls.__created_object
 
     def update(self) -> None:
