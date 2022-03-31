@@ -7,7 +7,10 @@ class ConsoleInterface(UserInterface):
     """
     Console user interface class
 
-    Fields:
+    Class fields:
+        __created_object: the only class object
+
+    Object fields:
         __queue (tuple): event queue list
 
     Methods:
@@ -18,9 +21,17 @@ class ConsoleInterface(UserInterface):
         __queue_sort(): sort queue
     """
 
+    __created_object = None
+
     def __init__(self) -> None:
         """Initialization method"""
         super().__init__()
+
+    def __new__(cls, *args, **kwargs):
+        if cls.__created_object is None:
+            cls.__created_object = super().__new__(cls)
+            cls.__created_object.__init__(*args, **kwargs)
+        return cls.__created_object
 
     def update(self) -> None:
         super().update()
