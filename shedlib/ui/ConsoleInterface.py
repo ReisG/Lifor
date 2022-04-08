@@ -1,5 +1,5 @@
-from shedlib.UI.UserInterface import UserInterface
-from shedlib.Time.Time import Time
+from shedlib.ui.UserInterface import UserInterface
+from shedlib.time.Time import Time
 from os import system
 
 
@@ -16,7 +16,7 @@ class ConsoleInterface(UserInterface):
     Methods:
         update(): update current scene
         show_msg(msg="Hello, World!): write message in console
-        show_event(name="Event", started=True, time=Time(seconds=0)): write info about event in console
+        show_event(name="event", started=True, time=time(seconds=0)): write info about event in console
         get_log(): get user input from console
         __queue_sort(): sort queue
     """
@@ -48,7 +48,7 @@ class ConsoleInterface(UserInterface):
         # clear queue
         self.queue.clear()
 
-    def show_event(self, name: str = "Event", started: bool = True, time: Time = Time(seconds=0)) -> None:
+    def show_event(self, name: str = "event", started: bool = True, time: Time = Time(seconds=0)) -> None:
         """
         Write info about event in console
 

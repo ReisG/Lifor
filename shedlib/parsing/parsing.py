@@ -1,5 +1,5 @@
-from shedlib.Time.Time import Time
-from shedlib.Event.event import Event
+from shedlib.time.Time import Time
+from shedlib.event.event import Event
 
 class Parser:
     ''' Class helping getting day schedule (parsing .shdl files)'''

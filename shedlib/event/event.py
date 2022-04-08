@@ -1,4 +1,4 @@
-from shedlib.Time.Time import Time
+from shedlib.time.Time import Time
 
 class Event:
     __slots__ = ('__id', '__name', '__start', '__end',)

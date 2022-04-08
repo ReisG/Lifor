@@ -1,6 +1,6 @@
-from shedlib.ui.ConsoleInterface import ConsoleInterface as ConsoleInterface
-from shedlib.parsing.parsing import Parser as Parser
-from shedlib.time.Time import Time as Time
+from shedlib.ui import ConsoleInterface
+from shedlib.parsing import Parser
+from shedlib.time import Time
 import time
 
 
@@ -22,9 +22,9 @@ class LiforApp:
         program_end = False
 
         while not program_end:
-            self.update_time()
+            self.__update_time()
 
-            self.make_scene()
+            self.__make_scene()
 
             self.__cli.update()
             time.sleep(1)

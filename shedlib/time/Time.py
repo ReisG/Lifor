@@ -23,7 +23,7 @@ class Time:
         self.__seconds = hours*3600 + minutes*60 + seconds
 
     def __sub__(self, other):
-        ''' Returns time delta between two Time objects '''
+        ''' Returns time delta between two time objects '''
         return Time(abs(self.__seconds - other.__seconds))
 
     def __eq__(self, other):

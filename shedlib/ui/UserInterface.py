@@ -1,4 +1,4 @@
-from shedlib.Time.Time import Time
+from shedlib.time.Time import Time
 
 class UserInterface:
    """Basic user interface class"""
@@ -12,7 +12,7 @@ class UserInterface:
       """Main method. Update current scene"""
       pass
     
-   def append_points(self, name: str = "Event", started: bool = True, time: Time = Time(seconds=0)) -> None:
+   def append_points(self, name: str = "event", started: bool = True, time: Time = Time(seconds=0)) -> None:
       """
       Append points in queue to show.
 
