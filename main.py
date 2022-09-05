@@ -41,7 +41,7 @@ def settingProgrammUp():
     if os.path.split( os.getcwd() )[-1] == "qpython":
         # star works only if there is only one version installed
         # must be replaced later with better solution
-        os.chdir("projects3/Lifor-*")
+        os.system("cd projects3/Lifor-*")
 
 if __name__ == "__main__":
     settingProgrammUp()
