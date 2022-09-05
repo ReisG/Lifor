@@ -2,6 +2,7 @@ from shedlib.UI.ConsoleInterface import ConsoleInterface as ConsoleInterface
 from shedlib.Parsing.parsing import Parser as Parser
 from shedlib.Time.Time import Time as Time
 import time
+import os
 
 
 def main():
@@ -31,7 +32,18 @@ def main():
         time.sleep(1)
 
 
+def settingProgrammUp():
+    """ 
+    This module sets programm up working 
+    on qpython platform. By default it runs as at qpythons root directory
+    So, here we moves programm to it's normal place if it's in 'qpython' folder
+    """
+    if os.path.split( os.getcwd() )[-1] == "qpython":
+        # star works only if there is only one version installed
+        # must be replaced later with better solution
+        os.chdir("projects3/Lifor-*")
 
 if __name__ == "__main__":
-    main()
-    quit()
+    settingProgrammUp()
+    # main()
+    # quit()
