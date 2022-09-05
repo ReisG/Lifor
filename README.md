@@ -10,9 +10,7 @@
 1. To use this app on Android you need to download [QPython](https://github.com/qpython-android/qpython/releases/tag/3.0.1) on your devise. <!-- There must be a link to Google Play Store but I couldn't reach it -->
 2. Download our app archive from GitHub repository
 3. Extract archive on `Phone Storage/qpython/projects3/` folder.
-4. Go to `shedlib/Parsering/parsing.py` and change `Parser.__datadir` value to `"projects3/Lifor-<YOUR-LIFOR-VERSION>/.data"`
-5. Change `datadir` value to `"projects3/Lifor-<YOUR-LIFOR-VERSION>/.data"`
-6. Set your daily schedule. Run `setSchedule.py` and follow instructions.
+4. Set your daily schedule. Run `setSchedule.py` and follow instructions.
 
 To use app you need to:
 1. Open QPython application on your devise.
