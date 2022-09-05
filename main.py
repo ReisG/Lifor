@@ -4,6 +4,7 @@ from shedlib.Time.Time import Time as Time
 import time
 import os
 
+__VERSION__ = "0.1.1"
 
 def main():
     """Main function"""
@@ -39,11 +40,10 @@ def settingProgrammUp():
     So, here we moves programm to it's normal place if it's in 'qpython' folder
     """
     if os.path.split( os.getcwd() )[-1] == "qpython":
-        # star works only if there is only one version installed
-        # must be replaced later with better solution
-        os.system("cd projects3/Lifor-*")
+        os.chdir(f"projects3/Lifor-{__VERSION__}")
+
 
 if __name__ == "__main__":
     settingProgrammUp()
-    # main()
-    # quit()
+    main()
+    quit()
