@@ -4,7 +4,7 @@ from shedlib.Time.Time import Time as Time
 import time
 import os
 
-__VERSION__ = "0.1.1"
+__VERSION__ = "0.1.2"
 
 def main():
     """Main function"""
